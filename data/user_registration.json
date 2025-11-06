@@ -1,0 +1,508 @@
+{
+  "menu": {
+    "id": "user_registration",
+    "name": "사용자 등록",
+    "tableName": "tb_users",
+    "description": "ERP 시스템 사용자를 등록하고 관리하는 화면입니다. 사용자 계정 정보, 소속 부서, 권한 등을 설정할 수 있습니다.",
+    "schema": {
+      "menuId": "user_registration",
+      "menuName": "사용자 등록",
+      "tableName": "tb_users",
+      "description": "ERP 시스템 사용자를 등록하고 관리하는 화면입니다. 사용자 계정 정보, 소속 부서, 권한 등을 설정할 수 있습니다.",
+      "columns": [
+        {
+          "name": "co_cd",
+          "type": "string",
+          "label": "회사 코드",
+          "required": true,
+          "placeholder": "회사 코드를 입력하세요"
+        },
+        {
+          "name": "bp_cd",
+          "type": "string",
+          "label": "거래처 코드",
+          "required": true,
+          "placeholder": "거래처 코드를 입력하세요"
+        },
+        {
+          "name": "pa_bp_cd",
+          "type": "string",
+          "label": "상위 거래처 코드",
+          "required": false,
+          "placeholder": "상위 거래처 코드를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "erp_code",
+          "type": "string",
+          "label": "ERP 코드",
+          "required": false,
+          "placeholder": "ERP 코드를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bp_full_nm",
+          "type": "string",
+          "label": "거래처 전체 명칭",
+          "required": false,
+          "placeholder": "거래처의 정식 명칭을 입력하세요"
+        },
+        {
+          "name": "bill_bp_cd",
+          "type": "string",
+          "label": "계산서 거래처 코드",
+          "required": false,
+          "placeholder": "계산서 발행 거래처 코드를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bp_nm",
+          "type": "string",
+          "label": "거래처 명칭",
+          "required": true,
+          "placeholder": "거래처 명칭을 입력하세요"
+        },
+        {
+          "name": "bp_type",
+          "type": "string",
+          "label": "거래처 유형",
+          "required": true,
+          "placeholder": "거래처 유형을 입력하세요"
+        },
+        {
+          "name": "bp_div",
+          "type": "string",
+          "label": "거래처 구분",
+          "required": true,
+          "placeholder": "거래처 구분을 입력하세요"
+        },
+        {
+          "name": "bp_rate",
+          "type": "number",
+          "label": "거래처 요율",
+          "required": false,
+          "placeholder": "거래처 요율을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "crem_amt",
+          "type": "number",
+          "label": "신용 한도액",
+          "required": false,
+          "placeholder": "신용 한도액을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "buri_amt",
+          "type": "number",
+          "label": "부채 한도액",
+          "required": false,
+          "placeholder": "부채 한도액을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "repre_nm",
+          "type": "string",
+          "label": "대표자 명",
+          "required": false,
+          "placeholder": "대표자 이름을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bp_rgst_no",
+          "type": "string",
+          "label": "사업자등록번호",
+          "required": false,
+          "placeholder": "예: XXX-XX-XXXXX",
+          "validation": {
+            "pattern": "^\\d{3}-\\d{2}-\\d{5}$"
+          }
+        },
+        {
+          "name": "ind_type",
+          "type": "string",
+          "label": "업종",
+          "required": false,
+          "placeholder": "업종을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "cnd_type",
+          "type": "string",
+          "label": "업태",
+          "required": false,
+          "placeholder": "업태를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "ji_bon",
+          "type": "string",
+          "label": "지번",
+          "required": false,
+          "placeholder": "지번 주소를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "si_gun",
+          "type": "string",
+          "label": "시/군",
+          "required": false,
+          "placeholder": "시/군을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "zip_cd",
+          "type": "string",
+          "label": "우편번호",
+          "required": false,
+          "placeholder": "예: XXX-XX",
+          "validation": {
+            "pattern": "^\\d{3}-\\d{2}$"
+          }
+        },
+        {
+          "name": "addr1",
+          "type": "string",
+          "label": "기본 주소",
+          "required": false,
+          "placeholder": "기본 주소를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "addr2",
+          "type": "string",
+          "label": "상세 주소",
+          "required": false,
+          "placeholder": "상세 주소를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "tel_no",
+          "type": "phone",
+          "label": "대표 전화번호",
+          "required": false,
+          "placeholder": "예: 000-0000-0000"
+        },
+        {
+          "name": "tel_no2",
+          "type": "phone",
+          "label": "보조 전화번호",
+          "required": false,
+          "placeholder": "보조 전화번호를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "prsn_nm",
+          "type": "string",
+          "label": "담당자 이름",
+          "required": false,
+          "placeholder": "담당자 이름을 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bank_cd",
+          "type": "string",
+          "label": "은행 코드",
+          "required": false,
+          "placeholder": "은행 코드를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bank_acct_no",
+          "type": "string",
+          "label": "은행 계좌번호",
+          "required": false,
+          "placeholder": "은행 계좌번호를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "bank_holder",
+          "type": "string",
+          "label": "예금주",
+          "required": false,
+          "placeholder": "예금주를 입력하세요 (선택 사항)"
+        },
+        {
+          "name": "use_yn",
+          "type": "select",
+          "label": "사용 여부",
+          "required": true,
+          "placeholder": "사용 여부를 선택하세요",
+          "options": [
+            "Y",
+            "N"
+          ]
+        },
+        {
+          "name": "del_yn",
+          "type": "select",
+          "label": "삭제 여부",
+          "required": true,
+          "placeholder": "삭제 여부를 선택하세요",
+          "options": [
+            "Y",
+            "N"
+          ]
+        },
+        {
+          "name": "insrt_user_id",
+          "type": "string",
+          "label": "등록자 ID",
+          "required": true,
+          "readOnly": true,
+          "generated": true,
+          "placeholder": "자동 생성",
+          "description": "레코드를 등록한 사용자 ID (시스템 자동 입력)"
+        },
+        {
+          "name": "insrt_dt",
+          "type": "date",
+          "label": "등록일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true,
+          "placeholder": "자동 생성",
+          "description": "레코드가 등록된 일시 (시스템 자동 입력)"
+        },
+        {
+          "name": "updt_user_id",
+          "type": "string",
+          "label": "수정자 ID",
+          "required": true,
+          "readOnly": true,
+          "generated": true,
+          "placeholder": "자동 업데이트",
+          "description": "레코드를 마지막으로 수정한 사용자 ID (시스템 자동 업데이트)"
+        },
+        {
+          "name": "updt_dt",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true,
+          "placeholder": "자동 업데이트",
+          "description": "레코드가 마지막으로 수정된 일시 (시스템 자동 업데이트)"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "label": "ID",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "label": "생성일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        }
+      ]
+    },
+    "createdAt": "2025-11-04T05:58:20.097Z",
+    "updatedAt": "2025-11-04T07:40:42.594Z"
+  },
+  "schema": {
+    "menuId": "user_registration",
+    "menuName": "사용자 등록",
+    "tableName": "tb_users",
+    "description": "ERP 시스템 사용자를 등록하고 관리하는 화면입니다. 사용자 계정 정보, 소속 부서, 권한 등을 설정할 수 있습니다.",
+    "columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "label": "ID",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "label": "사용자 ID",
+        "required": true,
+        "placeholder": "영문, 숫자 5~20자",
+        "validation": {
+          "min": 5,
+          "max": 20,
+          "pattern": "^[a-zA-Z0-9]*$"
+        }
+      },
+      {
+        "name": "password",
+        "type": "string",
+        "label": "비밀번호",
+        "required": true,
+        "placeholder": "영문, 숫자, 특수문자 조합 8~20자",
+        "validation": {
+          "min": 8,
+          "max": 20,
+          "pattern": "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).*$"
+        }
+      },
+      {
+        "name": "user_name",
+        "type": "string",
+        "label": "사용자 이름",
+        "required": true,
+        "placeholder": "예: 홍길동"
+      },
+      {
+        "name": "company_code",
+        "type": "string",
+        "label": "회사 코드",
+        "required": true,
+        "placeholder": "소속 회사 코드를 입력하세요"
+      },
+      {
+        "name": "department_id",
+        "type": "select",
+        "label": "부서",
+        "required": true,
+        "placeholder": "부서를 선택하세요",
+        "options": [
+          "영업팀",
+          "회계팀",
+          "개발팀",
+          "인사팀",
+          "마케팅팀"
+        ]
+      },
+      {
+        "name": "position",
+        "type": "select",
+        "label": "직책",
+        "required": true,
+        "placeholder": "직책을 선택하세요",
+        "options": [
+          "사원",
+          "대리",
+          "과장",
+          "차장",
+          "부장",
+          "이사",
+          "대표"
+        ]
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "이메일",
+        "required": true,
+        "placeholder": "user@example.com"
+      },
+      {
+        "name": "phone_number",
+        "type": "phone",
+        "label": "사내 전화번호",
+        "required": false,
+        "placeholder": "02-1234-5678"
+      },
+      {
+        "name": "mobile_number",
+        "type": "phone",
+        "label": "휴대폰 번호",
+        "required": true,
+        "placeholder": "010-1234-5678"
+      },
+      {
+        "name": "user_role",
+        "type": "select",
+        "label": "사용자 권한",
+        "required": true,
+        "placeholder": "권한을 선택하세요",
+        "options": [
+          "관리자",
+          "일반 사용자",
+          "회계 담당자",
+          "영업 담당자",
+          "구매 담당자"
+        ]
+      },
+      {
+        "name": "status",
+        "type": "select",
+        "label": "사용 상태",
+        "required": true,
+        "placeholder": "상태를 선택하세요",
+        "options": [
+          "사용중",
+          "정지",
+          "탈퇴"
+        ]
+      },
+      {
+        "name": "remarks",
+        "type": "textarea",
+        "label": "비고",
+        "required": false,
+        "placeholder": "특이사항을 입력하세요."
+      },
+      {
+        "name": "created_at",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "placeholder": "자동 생성",
+        "description": "레코드가 생성된 일시 (시스템 자동 입력)"
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "label": "생성자",
+        "required": true,
+        "placeholder": "자동 생성",
+        "description": "레코드를 생성한 사용자 ID (시스템 자동 입력)"
+      },
+      {
+        "name": "updated_at",
+        "type": "date",
+        "label": "수정일시",
+        "required": false,
+        "placeholder": "자동 업데이트",
+        "description": "레코드가 마지막으로 수정된 일시 (시스템 자동 업데이트)"
+      },
+      {
+        "name": "updated_by",
+        "type": "string",
+        "label": "수정자",
+        "required": false,
+        "placeholder": "자동 업데이트",
+        "description": "레코드를 마지막으로 수정한 사용자 ID (시스템 자동 업데이트)"
+      },
+      {
+        "name": "createdAt",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "updatedAt",
+        "type": "date",
+        "label": "수정일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      }
+    ]
+  },
+  "data": [
+    {
+      "id": "USR_001_20231026",
+      "user_id": "testUser123",
+      "password": "Password123!",
+      "user_name": "박영희",
+      "company_code": "COMP_A_007",
+      "department_id": "회계팀",
+      "position": "대리",
+      "email": "younghee.park@comp_a.com",
+      "phone_number": "02-9876-5432",
+      "mobile_number": "010-5678-1234",
+      "user_role": "회계 담당자",
+      "status": "사용중",
+      "remarks": "회계팀 신규 입사자, 시스템 접근 권한 확인 필요",
+      "created_at": "2023-10-26T14:30:00Z",
+      "created_by": "admin",
+      "updated_at": "2023-10-26T14:30:00Z",
+      "updated_by": "admin",
+      "createdAt": "2025-11-04T07:14:15.180Z",
+      "updatedAt": "2025-11-04T07:14:15.180Z"
+    }
+  ]
+}

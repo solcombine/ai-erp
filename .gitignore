@@ -6,8 +6,8 @@
 # 의존성
 node_modules/
 
-# 데이터 파일 (사용자 정보 포함!)
-data/*.json
+# 데이터 파일 (샘플 데이터는 포함)
+# data/*.json
 !data/.gitkeep
 
 # 업로드 파일

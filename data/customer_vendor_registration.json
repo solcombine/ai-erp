@@ -1,0 +1,599 @@
+{
+  "menu": {
+    "id": "customer_vendor_registration",
+    "name": "거래처 등록",
+    "tableName": "tb_customer_vendor",
+    "description": "회사에서 거래하는 고객 또는 공급업체의 정보를 등록하고 관리합니다. 매입/매출 및 기타 재무 활동의 기초 데이터로 활용됩니다.",
+    "schema": {
+      "menuId": "customer_vendor_registration",
+      "menuName": "거래처 등록",
+      "tableName": "tb_customer_vendor",
+      "description": "회사에서 거래하는 고객 또는 공급업체의 정보를 등록하고 관리합니다. 매입/매출 및 기타 재무 활동의 기초 데이터로 활용됩니다.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "string",
+          "label": "ID",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "customer_vendor_id",
+          "type": "number",
+          "label": "거래처 ID",
+          "required": true,
+          "placeholder": "시스템 자동 생성"
+        },
+        {
+          "name": "customer_vendor_code",
+          "type": "string",
+          "label": "거래처 코드",
+          "required": true,
+          "placeholder": "고유한 거래처 코드를 입력하세요 (예: C0001)"
+        },
+        {
+          "name": "customer_vendor_name",
+          "type": "string",
+          "label": "거래처명",
+          "required": true,
+          "placeholder": "거래처의 공식 명칭을 입력하세요"
+        },
+        {
+          "name": "customer_vendor_type",
+          "type": "select",
+          "label": "거래처 구분",
+          "required": true,
+          "options": [
+            "고객",
+            "공급업체",
+            "고객/공급업체",
+            "기타"
+          ],
+          "placeholder": "거래처의 유형을 선택하세요"
+        },
+        {
+          "name": "business_registration_no",
+          "type": "string",
+          "label": "사업자등록번호",
+          "required": true,
+          "placeholder": "10자리 사업자등록번호를 입력하세요 (예: 123-45-67890)",
+          "validation": {
+            "pattern": "^\\d{3}-?\\d{2}-?\\d{5}$"
+          }
+        },
+        {
+          "name": "corporate_registration_no",
+          "type": "string",
+          "label": "법인등록번호",
+          "required": false,
+          "placeholder": "13자리 법인등록번호를 입력하세요 (예: 110111-1234567)",
+          "validation": {
+            "pattern": "^\\d{6}-?\\d{7}$"
+          }
+        },
+        {
+          "name": "ceo_name",
+          "type": "string",
+          "label": "대표자명",
+          "required": true,
+          "placeholder": "대표자 성명을 입력하세요"
+        },
+        {
+          "name": "business_type",
+          "type": "string",
+          "label": "업태",
+          "required": true,
+          "placeholder": "사업의 종류를 입력하세요 (예: 제조업, 서비스업)"
+        },
+        {
+          "name": "business_item",
+          "type": "string",
+          "label": "종목",
+          "required": true,
+          "placeholder": "사업의 상세 항목을 입력하세요 (예: 소프트웨어 개발, 의류 제조)"
+        },
+        {
+          "name": "postal_code",
+          "type": "string",
+          "label": "우편번호",
+          "required": false,
+          "placeholder": "5자리 우편번호를 입력하세요 (예: 08505)",
+          "validation": {
+            "pattern": "^\\d{5}$"
+          }
+        },
+        {
+          "name": "address",
+          "type": "string",
+          "label": "주소",
+          "required": true,
+          "placeholder": "기본 주소를 입력하세요 (주소 검색 연동)"
+        },
+        {
+          "name": "address_detail",
+          "type": "string",
+          "label": "상세주소",
+          "required": false,
+          "placeholder": "상세 주소를 입력하세요 (예: 00빌딩 10층)"
+        },
+        {
+          "name": "main_phone",
+          "type": "phone",
+          "label": "대표전화",
+          "required": true,
+          "placeholder": "대표 전화번호를 입력하세요 (예: 02-1234-5678)"
+        },
+        {
+          "name": "main_fax",
+          "type": "phone",
+          "label": "대표팩스",
+          "required": false,
+          "placeholder": "대표 팩스번호를 입력하세요 (예: 02-1234-5679)"
+        },
+        {
+          "name": "main_email",
+          "type": "email",
+          "label": "대표이메일",
+          "required": false,
+          "placeholder": "대표 이메일 주소를 입력하세요 (예: main@example.com)"
+        },
+        {
+          "name": "contact_person_name",
+          "type": "string",
+          "label": "담당자명",
+          "required": false,
+          "placeholder": "거래처의 담당자 성명을 입력하세요"
+        },
+        {
+          "name": "contact_person_phone",
+          "type": "phone",
+          "label": "담당자 연락처",
+          "required": false,
+          "placeholder": "담당자 연락처를 입력하세요 (예: 010-1234-5678)"
+        },
+        {
+          "name": "contact_person_email",
+          "type": "email",
+          "label": "담당자 이메일",
+          "required": false,
+          "placeholder": "담당자 이메일 주소를 입력하세요 (예: contact@example.com)"
+        },
+        {
+          "name": "payment_terms",
+          "type": "select",
+          "label": "결제 조건",
+          "required": false,
+          "options": [
+            "현금",
+            "어음",
+            "계좌이체",
+            "카드",
+            "혼합"
+          ],
+          "placeholder": "주요 결제 조건을 선택하세요"
+        },
+        {
+          "name": "payment_cycle",
+          "type": "select",
+          "label": "결제 주기",
+          "required": false,
+          "options": [
+            "월별",
+            "분기별",
+            "반기별",
+            "연간",
+            "건별"
+          ],
+          "placeholder": "주요 결제 주기를 선택하세요"
+        },
+        {
+          "name": "notes",
+          "type": "textarea",
+          "label": "메모",
+          "required": false,
+          "placeholder": "거래처 관련 특이사항이나 추가 정보를 입력하세요"
+        },
+        {
+          "name": "use_yn",
+          "type": "select",
+          "label": "사용 여부",
+          "required": true,
+          "options": [
+            "Y",
+            "N"
+          ],
+          "placeholder": "거래처 사용 여부를 선택하세요"
+        },
+        {
+          "name": "created_at",
+          "type": "date",
+          "label": "생성일시",
+          "required": true,
+          "placeholder": "시스템 자동 입력"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "label": "생성자",
+          "required": true,
+          "placeholder": "시스템 자동 입력"
+        },
+        {
+          "name": "updated_at",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "placeholder": "시스템 자동 입력"
+        },
+        {
+          "name": "updated_by",
+          "type": "string",
+          "label": "수정자",
+          "required": true,
+          "placeholder": "시스템 자동 입력"
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "label": "생성일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        }
+      ]
+    },
+    "createdAt": "2025-11-04T07:21:34.992Z",
+    "updatedAt": "2025-11-04T07:21:34.992Z"
+  },
+  "schema": {
+    "menuId": "customer_vendor_registration",
+    "menuName": "거래처 등록",
+    "tableName": "tb_customer_vendor",
+    "description": "회사에서 거래하는 고객 또는 공급업체의 정보를 등록하고 관리합니다. 매입/매출 및 기타 재무 활동의 기초 데이터로 활용됩니다.",
+    "columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "label": "ID",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "customer_vendor_id",
+        "type": "number",
+        "label": "거래처 ID",
+        "required": true,
+        "placeholder": "시스템 자동 생성"
+      },
+      {
+        "name": "customer_vendor_code",
+        "type": "string",
+        "label": "거래처 코드",
+        "required": true,
+        "placeholder": "고유한 거래처 코드를 입력하세요 (예: C0001)"
+      },
+      {
+        "name": "customer_vendor_name",
+        "type": "string",
+        "label": "거래처명",
+        "required": true,
+        "placeholder": "거래처의 공식 명칭을 입력하세요"
+      },
+      {
+        "name": "customer_vendor_type",
+        "type": "select",
+        "label": "거래처 구분",
+        "required": true,
+        "options": [
+          "고객",
+          "공급업체",
+          "고객/공급업체",
+          "기타"
+        ],
+        "placeholder": "거래처의 유형을 선택하세요"
+      },
+      {
+        "name": "business_registration_no",
+        "type": "string",
+        "label": "사업자등록번호",
+        "required": true,
+        "placeholder": "10자리 사업자등록번호를 입력하세요 (예: 123-45-67890)",
+        "validation": {
+          "pattern": "^\\d{3}-?\\d{2}-?\\d{5}$"
+        }
+      },
+      {
+        "name": "corporate_registration_no",
+        "type": "string",
+        "label": "법인등록번호",
+        "required": false,
+        "placeholder": "13자리 법인등록번호를 입력하세요 (예: 110111-1234567)",
+        "validation": {
+          "pattern": "^\\d{6}-?\\d{7}$"
+        }
+      },
+      {
+        "name": "ceo_name",
+        "type": "string",
+        "label": "대표자명",
+        "required": true,
+        "placeholder": "대표자 성명을 입력하세요"
+      },
+      {
+        "name": "business_type",
+        "type": "string",
+        "label": "업태",
+        "required": true,
+        "placeholder": "사업의 종류를 입력하세요 (예: 제조업, 서비스업)"
+      },
+      {
+        "name": "business_item",
+        "type": "string",
+        "label": "종목",
+        "required": true,
+        "placeholder": "사업의 상세 항목을 입력하세요 (예: 소프트웨어 개발, 의류 제조)"
+      },
+      {
+        "name": "postal_code",
+        "type": "string",
+        "label": "우편번호",
+        "required": false,
+        "placeholder": "5자리 우편번호를 입력하세요 (예: 08505)",
+        "validation": {
+          "pattern": "^\\d{5}$"
+        }
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "label": "주소",
+        "required": true,
+        "placeholder": "기본 주소를 입력하세요 (주소 검색 연동)"
+      },
+      {
+        "name": "address_detail",
+        "type": "string",
+        "label": "상세주소",
+        "required": false,
+        "placeholder": "상세 주소를 입력하세요 (예: 00빌딩 10층)"
+      },
+      {
+        "name": "main_phone",
+        "type": "phone",
+        "label": "대표전화",
+        "required": true,
+        "placeholder": "대표 전화번호를 입력하세요 (예: 02-1234-5678)"
+      },
+      {
+        "name": "main_fax",
+        "type": "phone",
+        "label": "대표팩스",
+        "required": false,
+        "placeholder": "대표 팩스번호를 입력하세요 (예: 02-1234-5679)"
+      },
+      {
+        "name": "main_email",
+        "type": "email",
+        "label": "대표이메일",
+        "required": false,
+        "placeholder": "대표 이메일 주소를 입력하세요 (예: main@example.com)"
+      },
+      {
+        "name": "contact_person_name",
+        "type": "string",
+        "label": "담당자명",
+        "required": false,
+        "placeholder": "거래처의 담당자 성명을 입력하세요"
+      },
+      {
+        "name": "contact_person_phone",
+        "type": "phone",
+        "label": "담당자 연락처",
+        "required": false,
+        "placeholder": "담당자 연락처를 입력하세요 (예: 010-1234-5678)"
+      },
+      {
+        "name": "contact_person_email",
+        "type": "email",
+        "label": "담당자 이메일",
+        "required": false,
+        "placeholder": "담당자 이메일 주소를 입력하세요 (예: contact@example.com)"
+      },
+      {
+        "name": "payment_terms",
+        "type": "select",
+        "label": "결제 조건",
+        "required": false,
+        "options": [
+          "현금",
+          "어음",
+          "계좌이체",
+          "카드",
+          "혼합"
+        ],
+        "placeholder": "주요 결제 조건을 선택하세요"
+      },
+      {
+        "name": "payment_cycle",
+        "type": "select",
+        "label": "결제 주기",
+        "required": false,
+        "options": [
+          "월별",
+          "분기별",
+          "반기별",
+          "연간",
+          "건별"
+        ],
+        "placeholder": "주요 결제 주기를 선택하세요"
+      },
+      {
+        "name": "notes",
+        "type": "textarea",
+        "label": "메모",
+        "required": false,
+        "placeholder": "거래처 관련 특이사항이나 추가 정보를 입력하세요"
+      },
+      {
+        "name": "use_yn",
+        "type": "select",
+        "label": "사용 여부",
+        "required": true,
+        "options": [
+          "Y",
+          "N"
+        ],
+        "placeholder": "거래처 사용 여부를 선택하세요"
+      },
+      {
+        "name": "created_at",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "placeholder": "시스템 자동 입력"
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "label": "생성자",
+        "required": true,
+        "placeholder": "시스템 자동 입력"
+      },
+      {
+        "name": "updated_at",
+        "type": "date",
+        "label": "수정일시",
+        "required": true,
+        "placeholder": "시스템 자동 입력"
+      },
+      {
+        "name": "updated_by",
+        "type": "string",
+        "label": "수정자",
+        "required": true,
+        "placeholder": "시스템 자동 입력"
+      },
+      {
+        "name": "createdAt",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "updatedAt",
+        "type": "date",
+        "label": "수정일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      }
+    ]
+  },
+  "data": [
+    {
+      "id": null,
+      "customer_vendor_id": 100,
+      "customer_vendor_code": "A1011",
+      "customer_vendor_name": "8대법인",
+      "customer_vendor_type": null,
+      "business_registration_no": null,
+      "corporate_registration_no": null,
+      "ceo_name": null,
+      "business_type": "ZZ0002",
+      "business_item": "ZZ0206",
+      "postal_code": null,
+      "address": null,
+      "address_detail": null,
+      "main_phone": null,
+      "main_fax": null,
+      "main_email": null,
+      "contact_person_name": null,
+      "contact_person_phone": null,
+      "contact_person_email": null,
+      "payment_terms": null,
+      "payment_cycle": null,
+      "notes": null,
+      "use_yn": "Y",
+      "created_at": "2024-11-13 14:10:49",
+      "created_by": "sol1",
+      "updated_at": "2025-02-27 14:37:49",
+      "updated_by": "sckcs",
+      "createdAt": "2025-11-04T07:30:22.960Z",
+      "updatedAt": "2025-11-04T07:30:22.960Z"
+    },
+    {
+      "id": null,
+      "customer_vendor_id": null,
+      "customer_vendor_code": "A1011",
+      "customer_vendor_name": "8대법인",
+      "customer_vendor_type": null,
+      "business_registration_no": null,
+      "corporate_registration_no": null,
+      "ceo_name": null,
+      "business_type": null,
+      "business_item": null,
+      "postal_code": null,
+      "address": null,
+      "address_detail": null,
+      "main_phone": null,
+      "main_fax": null,
+      "main_email": null,
+      "contact_person_name": null,
+      "contact_person_phone": null,
+      "contact_person_email": null,
+      "payment_terms": null,
+      "payment_cycle": null,
+      "notes": null,
+      "use_yn": "Y",
+      "created_at": "2024-11-13 14:10:49",
+      "created_by": "sol1",
+      "updated_at": "2025-02-27 14:37:49",
+      "updated_by": "sckcs",
+      "createdAt": "2025-11-04T07:32:58.334Z",
+      "updatedAt": "2025-11-04T07:32:58.334Z"
+    },
+    {
+      "id": "1030a45c-aba9-4157-8110-d64dc60792ee",
+      "customer_vendor_id": null,
+      "customer_vendor_code": null,
+      "customer_vendor_name": null,
+      "customer_vendor_type": null,
+      "business_registration_no": null,
+      "corporate_registration_no": null,
+      "ceo_name": null,
+      "business_type": null,
+      "business_item": null,
+      "postal_code": null,
+      "address": null,
+      "address_detail": null,
+      "main_phone": null,
+      "main_fax": null,
+      "main_email": null,
+      "contact_person_name": null,
+      "contact_person_phone": null,
+      "contact_person_email": null,
+      "payment_terms": null,
+      "payment_cycle": null,
+      "notes": null,
+      "use_yn": null,
+      "created_at": null,
+      "created_by": null,
+      "updated_at": null,
+      "updated_by": null,
+      "createdAt": "2025-11-04T07:33:36.807Z",
+      "updatedAt": "2025-11-04T07:33:36.807Z"
+    }
+  ]
+}

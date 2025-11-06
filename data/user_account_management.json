@@ -1,0 +1,333 @@
+{
+  "menu": {
+    "id": "user_account_management",
+    "name": "사용자 계정 관리",
+    "tableName": "users",
+    "description": "ERP 시스템 내 사용자 계정 정보를 등록하고 관리하는 화면입니다. 각 사용자의 기본 정보, 소속, 직위, 역할, 연락처 및 계정 활성화 상태를 관리합니다.",
+    "schema": {
+      "menuId": "user_account_management",
+      "menuName": "사용자 계정 관리",
+      "tableName": "users",
+      "description": "ERP 시스템 내 사용자 계정 정보를 등록하고 관리하는 화면입니다. 각 사용자의 기본 정보, 소속, 직위, 역할, 연락처 및 계정 활성화 상태를 관리합니다.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "string",
+          "label": "ID",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "company_code",
+          "type": "string",
+          "label": "회사 코드",
+          "required": true,
+          "placeholder": "소속 회사 코드를 입력하세요"
+        },
+        {
+          "name": "user_id",
+          "type": "string",
+          "label": "사용자 ID",
+          "required": true,
+          "placeholder": "사용자 ID (영문, 숫자 4~20자)",
+          "validation": {
+            "min": 4,
+            "max": 20,
+            "pattern": "^[a-zA-Z0-9]+$"
+          }
+        },
+        {
+          "name": "user_name",
+          "type": "string",
+          "label": "사용자명",
+          "required": true,
+          "placeholder": "사용자 실명을 입력하세요"
+        },
+        {
+          "name": "password",
+          "type": "string",
+          "label": "비밀번호",
+          "required": true,
+          "placeholder": "비밀번호를 입력하세요 (최소 8자)",
+          "validation": {
+            "min": 8,
+            "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d!@#$%^&*()_+]{8,}$"
+          }
+        },
+        {
+          "name": "department_code",
+          "type": "string",
+          "label": "부서 코드",
+          "required": true,
+          "placeholder": "소속 부서 코드를 입력하세요"
+        },
+        {
+          "name": "position_code",
+          "type": "string",
+          "label": "직위 코드",
+          "required": true,
+          "placeholder": "직위 코드를 입력하세요"
+        },
+        {
+          "name": "role_code",
+          "type": "string",
+          "label": "역할 코드",
+          "required": true,
+          "placeholder": "사용자 역할 코드를 입력하세요"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "이메일",
+          "required": false,
+          "placeholder": "이메일 주소를 입력하세요"
+        },
+        {
+          "name": "phone_number",
+          "type": "phone",
+          "label": "전화번호",
+          "required": false,
+          "placeholder": "연락처를 입력하세요 (예: 010-1234-5678)"
+        },
+        {
+          "name": "is_active",
+          "type": "select",
+          "label": "사용 여부",
+          "required": true,
+          "options": [
+            "Y",
+            "N"
+          ],
+          "placeholder": "사용 여부를 선택하세요"
+        },
+        {
+          "name": "is_approved",
+          "type": "select",
+          "label": "승인 여부",
+          "required": true,
+          "options": [
+            "Y",
+            "N"
+          ],
+          "placeholder": "계정 승인 여부를 선택하세요"
+        },
+        {
+          "name": "last_login_at",
+          "type": "date",
+          "label": "최종 로그인 일시",
+          "required": false,
+          "placeholder": "최종 로그인 일시 (자동 업데이트)"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "label": "생성자",
+          "required": true,
+          "placeholder": "생성자 ID (자동)"
+        },
+        {
+          "name": "created_at",
+          "type": "date",
+          "label": "생성일시",
+          "required": true,
+          "placeholder": "생성 일시 (자동)"
+        },
+        {
+          "name": "updated_by",
+          "type": "string",
+          "label": "수정자",
+          "required": true,
+          "placeholder": "수정자 ID (자동)"
+        },
+        {
+          "name": "updated_at",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "placeholder": "수정 일시 (자동)"
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "label": "생성일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "label": "수정일시",
+          "required": true,
+          "readOnly": true,
+          "generated": true
+        }
+      ]
+    },
+    "createdAt": "2025-11-04T06:01:01.365Z",
+    "updatedAt": "2025-11-04T06:01:01.365Z"
+  },
+  "schema": {
+    "menuId": "user_account_management",
+    "menuName": "사용자 계정 관리",
+    "tableName": "users",
+    "description": "ERP 시스템 내 사용자 계정 정보를 등록하고 관리하는 화면입니다. 각 사용자의 기본 정보, 소속, 직위, 역할, 연락처 및 계정 활성화 상태를 관리합니다.",
+    "columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "label": "ID",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "company_code",
+        "type": "string",
+        "label": "회사 코드",
+        "required": true,
+        "placeholder": "소속 회사 코드를 입력하세요"
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "label": "사용자 ID",
+        "required": true,
+        "placeholder": "사용자 ID (영문, 숫자 4~20자)",
+        "validation": {
+          "min": 4,
+          "max": 20,
+          "pattern": "^[a-zA-Z0-9]+$"
+        }
+      },
+      {
+        "name": "user_name",
+        "type": "string",
+        "label": "사용자명",
+        "required": true,
+        "placeholder": "사용자 실명을 입력하세요"
+      },
+      {
+        "name": "password",
+        "type": "string",
+        "label": "비밀번호",
+        "required": true,
+        "placeholder": "비밀번호를 입력하세요 (최소 8자)",
+        "validation": {
+          "min": 8,
+          "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d!@#$%^&*()_+]{8,}$"
+        }
+      },
+      {
+        "name": "department_code",
+        "type": "string",
+        "label": "부서 코드",
+        "required": true,
+        "placeholder": "소속 부서 코드를 입력하세요"
+      },
+      {
+        "name": "position_code",
+        "type": "string",
+        "label": "직위 코드",
+        "required": true,
+        "placeholder": "직위 코드를 입력하세요"
+      },
+      {
+        "name": "role_code",
+        "type": "string",
+        "label": "역할 코드",
+        "required": true,
+        "placeholder": "사용자 역할 코드를 입력하세요"
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "이메일",
+        "required": false,
+        "placeholder": "이메일 주소를 입력하세요"
+      },
+      {
+        "name": "phone_number",
+        "type": "phone",
+        "label": "전화번호",
+        "required": false,
+        "placeholder": "연락처를 입력하세요 (예: 010-1234-5678)"
+      },
+      {
+        "name": "is_active",
+        "type": "select",
+        "label": "사용 여부",
+        "required": true,
+        "options": [
+          "Y",
+          "N"
+        ],
+        "placeholder": "사용 여부를 선택하세요"
+      },
+      {
+        "name": "is_approved",
+        "type": "select",
+        "label": "승인 여부",
+        "required": true,
+        "options": [
+          "Y",
+          "N"
+        ],
+        "placeholder": "계정 승인 여부를 선택하세요"
+      },
+      {
+        "name": "last_login_at",
+        "type": "date",
+        "label": "최종 로그인 일시",
+        "required": false,
+        "placeholder": "최종 로그인 일시 (자동 업데이트)"
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "label": "생성자",
+        "required": true,
+        "placeholder": "생성자 ID (자동)"
+      },
+      {
+        "name": "created_at",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "placeholder": "생성 일시 (자동)"
+      },
+      {
+        "name": "updated_by",
+        "type": "string",
+        "label": "수정자",
+        "required": true,
+        "placeholder": "수정자 ID (자동)"
+      },
+      {
+        "name": "updated_at",
+        "type": "date",
+        "label": "수정일시",
+        "required": true,
+        "placeholder": "수정 일시 (자동)"
+      },
+      {
+        "name": "createdAt",
+        "type": "date",
+        "label": "생성일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      },
+      {
+        "name": "updatedAt",
+        "type": "date",
+        "label": "수정일시",
+        "required": true,
+        "readOnly": true,
+        "generated": true
+      }
+    ]
+  },
+  "data": []
+}
