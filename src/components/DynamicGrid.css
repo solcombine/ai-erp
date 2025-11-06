@@ -1,0 +1,225 @@
+.dynamic-grid-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.grid-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.grid-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.data-count {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.grid-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 250px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.grid-wrapper {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.dynamic-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.dynamic-grid thead {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  z-index: 10;
+}
+
+.dynamic-grid th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.dynamic-grid th:hover {
+  background: #f3f4f6;
+}
+
+.dynamic-grid th.sorted {
+  color: #3b82f6;
+  background: #eff6ff;
+}
+
+.sort-icon {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.actions-column {
+  text-align: center;
+  cursor: default !important;
+}
+
+.actions-column:hover {
+  background: #f9fafb !important;
+}
+
+.dynamic-grid td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+}
+
+.dynamic-grid tbody tr {
+  transition: background-color 0.2s;
+}
+
+.dynamic-grid tbody tr:hover {
+  background: #f9fafb;
+}
+
+.dynamic-grid tbody tr.editing-row {
+  background: #fffbeb;
+}
+
+.actions-cell {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.actions-cell button {
+  padding: 6px 10px;
+  margin: 0 2px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.edit-btn:hover {
+  background: #dbeafe;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+.save-btn:hover {
+  background: #d1fae5;
+}
+
+.cancel-btn:hover {
+  background: #fee2e2;
+}
+
+.cell-input,
+.cell-input select,
+.cell-input textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.cell-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.empty-value {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.empty-state {
+  padding: 60px 20px !important;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+.grid-loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .grid-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .grid-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .add-button {
+    width: 100%;
+  }
+}
+
